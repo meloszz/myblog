@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://meloszz.github.io/myblog">
-  <title>Archives | Hexo</title>
+  <title>循环滚动框 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://meloszz.github.io/myblog/archives/index.html">
+  <meta name="description" content="框架： jquery 实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动 实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性 完整代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647">
+<meta property="og:type" content="article">
+<meta property="og:title" content="循环滚动框">
+<meta property="og:url" content="https://meloszz.github.io/myblog/2017/10/18/循环滚动框/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="框架： jquery 实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动 实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性 完整代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647">
+<meta property="og:image" content="http://oxy70dnj0.bkt.clouddn.com/xunhuangundongkuang1.gif">
+<meta property="og:updated_time" content="2017-10-18T02:45:39.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="循环滚动框">
+<meta name="twitter:description" content="框架： jquery 实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动 实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性 完整代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647">
+<meta name="twitter:image" content="http://oxy70dnj0.bkt.clouddn.com/xunhuangundongkuang1.gif">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -125,179 +131,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-循环滚动框" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      循环滚动框
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/18/循环滚动框/" class="archive-article-date">
+
+        
+        <a href="/2017/10/18/循环滚动框/" class="archive-article-date">
   	<time datetime="2017-10-18T02:27:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/18/循环滚动框/">循环滚动框</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>框架： jquery</p>
+<p>实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动</p>
+<p>实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性</p>
+<p>完整代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;script src=&quot;./src/jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		body &#123;</div><div class="line">			position: relative;</div><div class="line">		&#125;</div><div class="line">		.content &#123;</div><div class="line">			position: absolute;</div><div class="line">			padding: 10px;</div><div class="line">			box-sizing: border-box;</div><div class="line">			overflow: hidden;</div><div class="line">			width: 400px;</div><div class="line">			height: 100px;</div><div class="line">			border: 1px solid black;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;content&quot;&gt;</div><div class="line">		&lt;div class=&quot;scrollDiv&quot;&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div1</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div2</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div3</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div4</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div5</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div class=&quot;bottomDiv&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	(function () &#123;</div><div class="line">		setScroll();</div><div class="line">	&#125;)();</div><div class="line">	function setScroll(data) &#123;</div><div class="line">		var content = &quot;&quot;;</div><div class="line">		var speed = 50;</div><div class="line">		var bottomDiv = $(&quot;.bottomDiv&quot;);</div><div class="line">		var content = $(&quot;.content&quot;);</div><div class="line">		var scrollDiv = $(&quot;.scrollDiv&quot;);</div><div class="line">		bottomDiv.html(scrollDiv.html());</div><div class="line">		function scroll() &#123;</div><div class="line">			if (bottomDiv.outerHeight() - content.scrollTop() &lt;= 0) &#123;</div><div class="line">				content.scrollTop(content.scrollTop() - scrollDiv.outerHeight());</div><div class="line">			&#125; else &#123;</div><div class="line">				content.scrollTop(content.scrollTop() + 1);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		var rollInterval = rollInterval || setInterval(scroll, speed);</div><div class="line">		content.unbind();</div><div class="line">		content.mouseover(function () &#123; clearInterval(rollInterval) &#125;);</div><div class="line">		content.mouseout(function () &#123; rollInterval = setInterval(scroll, speed); &#125;);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img src="http://oxy70dnj0.bkt.clouddn.com/xunhuangundongkuang1.gif" alt="效果图"></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/16/article-title/" class="archive-article-date">
-  	<time datetime="2017-10-16T02:43:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/16/article-title/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">article title</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/16/article-title/">article title</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/12/hello-world/" class="archive-article-date">
-  	<time datetime="2017-10-12T08:14:26.571Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/12/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/02/vscode杂七杂八/" class="archive-article-date">
-  	<time datetime="2017-10-02T07:05:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/02/vscode杂七杂八/">vscode</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/07/markdown/" class="archive-article-date">
-  	<time datetime="2017-09-07T06:34:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/07/markdown/">markdown</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -320,8 +237,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

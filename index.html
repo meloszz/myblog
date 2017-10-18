@@ -127,33 +127,66 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-循环滚动框" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-es6小记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/18/循环滚动框/">循环滚动框</a>
+      <a class="article-title" href="/2017/10/18/es6小记/">es6小记</a>
     </h1>
   
 
         
-        <a href="/2017/10/18/循环滚动框/" class="archive-article-date">
-  	<time datetime="2017-10-18T02:27:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-18</time>
+        <a href="/2017/10/18/es6小记/" class="archive-article-date">
+  	<time datetime="2017-10-18T03:01:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>框架： jquery</p>
-<p>实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动</p>
-<p>实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性</p>
-<p>完整代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;script src=&quot;./src/jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		body &#123;</div><div class="line">			position: relative;</div><div class="line">		&#125;</div><div class="line">		.content &#123;</div><div class="line">			position: absolute;</div><div class="line">			padding: 10px;</div><div class="line">			box-sizing: border-box;</div><div class="line">			overflow: hidden;</div><div class="line">			width: 400px;</div><div class="line">			height: 100px;</div><div class="line">			border: 1px solid black;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;content&quot;&gt;</div><div class="line">		&lt;div class=&quot;scrollDiv&quot;&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div1</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div2</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div3</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div4</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div5</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div class=&quot;bottomDiv&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	(function () &#123;</div><div class="line">		setScroll();</div><div class="line">	&#125;)();</div><div class="line">	function setScroll() &#123;</div><div class="line">		var content = &quot;&quot;;</div><div class="line">		var speed = 50;</div><div class="line">		var bottomDiv = $(&quot;.bottomDiv&quot;);</div><div class="line">		var content = $(&quot;.content&quot;);</div><div class="line">		var scrollDiv = $(&quot;.scrollDiv&quot;);</div><div class="line">		bottomDiv.html(scrollDiv.html());</div><div class="line">		function scroll() &#123;</div><div class="line">			if (bottomDiv.outerHeight() - content.scrollTop() &lt;= 0) &#123;</div><div class="line">				content.scrollTop(content.scrollTop() - scrollDiv.outerHeight());</div><div class="line">			&#125; else &#123;</div><div class="line">				content.scrollTop(content.scrollTop() + 1);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		var rollInterval = setInterval(scroll, speed);</div><div class="line">		content.mouseover(function () &#123; clearInterval(rollInterval) &#125;);</div><div class="line">		content.mouseout(function () &#123; rollInterval = setInterval(scroll, speed); &#125;);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<p><img src="http://oxy70dnj0.bkt.clouddn.com/xunhuangundongkuang1.gif" alt="效果图"></p>
+        <p>记录了一些我之前了解的或者用到的es6的新特性，不全面，仅仅是介绍。如果想要完整学习es6，建议翻看<a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">阮一峰的es6教程</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web" target="_blank" rel="external">mdn文档</a></p>
+<h2 id="class-extends"><a href="#class-extends" class="headerlink" title="class extends"></a>class extends</h2><p>es6引入了class关键字，类的创建和继承更加的简洁和直观了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//类的定义</div><div class="line">class Animal &#123;</div><div class="line">	//构造器</div><div class="line">    constructor(name) &#123;</div><div class="line">        this.name = name;</div><div class="line">    &#125;</div><div class="line">    //实例方法</div><div class="line">    sayName() &#123;</div><div class="line">        console.log(&apos;My name is &apos;+this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//类的继承</div><div class="line">class Programmer extends Animal &#123;</div><div class="line">    constructor(name) &#123;</div><div class="line">    	//直接调用父类构造器进行初始化</div><div class="line">        super(name);</div><div class="line">    &#125;</div><div class="line">    program() &#123;</div><div class="line">        console.log(&quot;I&apos;m coding...&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//测试我们的类</div><div class="line">var animal=new Animal(&apos;dummy&apos;),</div><div class="line">wayou=new Programmer(&apos;wayou&apos;);</div><div class="line">animal.sayName();//输出 ‘My name is dummy’</div><div class="line">wayou.sayName();//输出 ‘My name is wayou’</div><div class="line">wayou.program();//输出 ‘I&apos;m coding...’</div></pre></td></tr></table></figure>
+<h2 id="const-和-let"><a href="#const-和-let" class="headerlink" title="const 和 let"></a>const 和 let</h2><p>es6之前，是没有块级作用域这个概念的。一般都用var声明变量，而var有一个有名的特性叫变量提升。</p>
+<p>要点：</p>
+<ol>
+<li>不可重复定义</li>
+<li>const定义的变量不可修改，必须声明时赋值</li>
+<li>不存在变量提升</li>
+<li>暂时性死区</li>
+</ol>
+<h2 id="函数默认值"><a href="#函数默认值" class="headerlink" title="函数默认值"></a>函数默认值</h2><p>函数终于可以直接指定默认值了</p>
+<p><code>function(x, y = 5)</code></p>
+<p>但要注意：</p>
+<ol>
+<li>要设置默认值的参数要放在最后</li>
+<li>设置了默认值的参数不能在函数中用let和const再次声明</li>
+</ol>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>es6新增的箭头函数大大简化了声明函数的方式，基本上可以替代掉匿名函数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var array = [1, 2, 3];</div><div class="line">//传统写法</div><div class="line">array.forEach(function(v, i, a) &#123;</div><div class="line">    console.log(v);</div><div class="line">&#125;);</div><div class="line">//ES6</div><div class="line">array.forEach(v = &gt; console.log(v));</div></pre></td></tr></table></figure>
+<p>用法：</p>
+<ol>
+<li>如果只包含一个表达式，<code>{...}</code>和<code>return</code>都是可以省略的，如：<code>a=&gt;a*a</code></li>
+<li>如果包含多条语句，则不能省略</li>
+<li>单个参数可以省略<code>()</code>，多个则不行，需要用<code>()</code>括起来</li>
+</ol>
+<p>注意:</p>
+<ol>
+<li>箭头函数的this总是指向外层调用者</li>
+<li>返回对象时如果是单条语句需要多加一层<code>{}</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a =&gt; &#123;name: a&#125;              //错</div><div class="line">a =&gt; &#123;&#123;name: a&#125;&#125;            //对</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>之前要拼接字符串通常是这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(&apos;#result&apos;).append(</div><div class="line">  &apos;There are &lt;b&gt;&apos; + basket.count + &apos;&lt;/b&gt; &apos; +</div><div class="line">  &apos;items in your basket, &apos; +</div><div class="line">  &apos;&lt;em&gt;&apos; + basket.onSale +</div><div class="line">  &apos;&lt;/em&gt; are on sale!&apos;</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>而有了模版字符串，只需要:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&apos;#result&apos;).append(`</div><div class="line">  There are &lt;b&gt;$&#123;basket.count&#125;&lt;/b&gt; items</div><div class="line">   in your basket, &lt;em&gt;$&#123;basket.onSale&#125;&lt;/em&gt;</div><div class="line">  are on sale!</div><div class="line">`);</div></pre></td></tr></table></figure></p>
+<h2 id="for…of"><a href="#for…of" class="headerlink" title="for…of"></a>for…of</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const arr = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</div><div class="line"></div><div class="line">for(let v of arr) &#123;</div><div class="line">  console.log(v); // red green blue</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>和for…in不同的是for…of每次循环的是值而不是序号</p>
+<h2 id="promsie"><a href="#promsie" class="headerlink" title="promsie"></a>promsie</h2><p>只要了解过nodejs的都知道callback hell，而es6内置的promise算是异步编程的一种解决方案，只是在es7出现了更优雅，更像同步代码的async/await</p>
+<p>promise和async回头再写一篇吧</p>
+<h2 id="主要参考"><a href="#主要参考" class="headerlink" title="主要参考:"></a>主要参考:</h2><p><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">http://es6.ruanyifeng.com/</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web</a></p>
 
       
 
@@ -166,7 +199,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/18/循环滚动框/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/18/es6小记/">展开全文 >></a>
         </p>
       
 
@@ -216,7 +249,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>环境: windows</p>
+        <p>作为巨硬出品的编辑器，功能没话说，已经成为我的主力编辑器。</p>
+<p>环境: windows</p>
 <h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>仅列出我常用的快捷键：</p>
 <ul>
 <li>打开新窗口: <code>ctrl+shift+n</code></li>
@@ -244,6 +278,8 @@
 <li><p>替换: <code>ctrl+h</code></p>
 </li>
 <li><p>选择多处: alt+鼠标点击</p>
+</li>
+<li><p>选择光标所在单词: <code>ctrl+d</code></p>
 </li>
 </ul>
 <p><strong>其他:</strong></p>
@@ -332,7 +368,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>markdown本身很简单，网上的介绍，教程一找一大堆，不过大多数都太冗杂，维基上找到一张图，满足了我的大多数需求：</p>
+        <p>markdown本身很简单，网上的介绍，教程一找一大堆，维基上找到一张图，满足了我的大多数需求：</p>
 <p><img src="http://oxy70dnj0.bkt.clouddn.com/markdown1.PNG" alt="test"></p>
 
       
@@ -358,6 +394,75 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/09/07/markdown/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-循环滚动框" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/21/循环滚动框/">循环滚动框</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/21/循环滚动框/" class="archive-article-date">
+  	<time datetime="2017-08-21T03:37:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>框架： jquery</p>
+<p>实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动</p>
+<p>实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性</p>
+<p>完整代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;script src=&quot;./src/jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		body &#123;</div><div class="line">			position: relative;</div><div class="line">		&#125;</div><div class="line">		.content &#123;</div><div class="line">			position: absolute;</div><div class="line">			padding: 10px;</div><div class="line">			box-sizing: border-box;</div><div class="line">			overflow: hidden;</div><div class="line">			width: 400px;</div><div class="line">			height: 100px;</div><div class="line">			border: 1px solid black;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;content&quot;&gt;</div><div class="line">		&lt;div class=&quot;scrollDiv&quot;&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div1</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div2</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div3</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div4</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div5</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div class=&quot;bottomDiv&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	(function () &#123;</div><div class="line">		setScroll();</div><div class="line">	&#125;)();</div><div class="line">	function setScroll() &#123;</div><div class="line">		var content = &quot;&quot;;</div><div class="line">		var speed = 50;</div><div class="line">		var bottomDiv = $(&quot;.bottomDiv&quot;);</div><div class="line">		var content = $(&quot;.content&quot;);</div><div class="line">		var scrollDiv = $(&quot;.scrollDiv&quot;);</div><div class="line">		bottomDiv.html(scrollDiv.html());</div><div class="line">		function scroll() &#123;</div><div class="line">			if (bottomDiv.outerHeight() - content.scrollTop() &lt;= 0) &#123;</div><div class="line">				content.scrollTop(content.scrollTop() - scrollDiv.outerHeight());</div><div class="line">			&#125; else &#123;</div><div class="line">				content.scrollTop(content.scrollTop() + 1);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		var rollInterval = setInterval(scroll, speed);</div><div class="line">		content.mouseover(function () &#123; clearInterval(rollInterval) &#125;);</div><div class="line">		content.mouseout(function () &#123; rollInterval = setInterval(scroll, speed); &#125;);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img src="http://oxy70dnj0.bkt.clouddn.com/xunhuangundongkuang1.gif" alt="效果图"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/21/循环滚动框/">展开全文 >></a>
         </p>
       
 

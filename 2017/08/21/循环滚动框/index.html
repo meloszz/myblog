@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://meloszz.github.io/myblog">
-  <title>vscode | Hexo</title>
+  <title>循环滚动框 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作为巨硬出品的编辑器，功能没话说，已经成为我的主力编辑器。 环境: windows 快捷键仅列出我常用的快捷键：  打开新窗口: ctrl+shift+n 打开新页面: ctrl+\ 关闭新页面: ctrl+w 切换页面: ctrl+1|ctrl+2|ctrl+3  如果没有则会打开  文件操作:  新建文件: ctrl+n 查找文件: ctrl+p  代码操作:  括号匹配: ctrl+shif">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="框架： jquery 实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动 实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性 完整代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vscode">
-<meta property="og:url" content="https://meloszz.github.io/myblog/2017/10/02/vscode杂七杂八/index.html">
+<meta property="og:title" content="循环滚动框">
+<meta property="og:url" content="https://meloszz.github.io/myblog/2017/08/21/循环滚动框/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="作为巨硬出品的编辑器，功能没话说，已经成为我的主力编辑器。 环境: windows 快捷键仅列出我常用的快捷键：  打开新窗口: ctrl+shift+n 打开新页面: ctrl+\ 关闭新页面: ctrl+w 切换页面: ctrl+1|ctrl+2|ctrl+3  如果没有则会打开  文件操作:  新建文件: ctrl+n 查找文件: ctrl+p  代码操作:  括号匹配: ctrl+shif">
-<meta property="og:updated_time" content="2017-10-18T07:05:51.347Z">
+<meta property="og:description" content="框架： jquery 实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动 实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性 完整代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647">
+<meta property="og:image" content="http://oxy70dnj0.bkt.clouddn.com/xunhuangundongkuang1.gif">
+<meta property="og:updated_time" content="2017-10-18T05:39:28.767Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vscode">
-<meta name="twitter:description" content="作为巨硬出品的编辑器，功能没话说，已经成为我的主力编辑器。 环境: windows 快捷键仅列出我常用的快捷键：  打开新窗口: ctrl+shift+n 打开新页面: ctrl+\ 关闭新页面: ctrl+w 切换页面: ctrl+1|ctrl+2|ctrl+3  如果没有则会打开  文件操作:  新建文件: ctrl+n 查找文件: ctrl+p  代码操作:  括号匹配: ctrl+shif">
+<meta name="twitter:title" content="循环滚动框">
+<meta name="twitter:description" content="框架： jquery 实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动 实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性 完整代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647">
+<meta name="twitter:image" content="http://oxy70dnj0.bkt.clouddn.com/xunhuangundongkuang1.gif">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -130,72 +131,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vscode杂七杂八" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-循环滚动框" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vscode
+      循环滚动框
     </h1>
   
 
         
-        <a href="/2017/10/02/vscode杂七杂八/" class="archive-article-date">
-  	<time datetime="2017-10-02T07:05:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-02</time>
+        <a href="/2017/08/21/循环滚动框/" class="archive-article-date">
+  	<time datetime="2017-08-21T03:37:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>作为巨硬出品的编辑器，功能没话说，已经成为我的主力编辑器。</p>
-<p>环境: windows</p>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>仅列出我常用的快捷键：</p>
-<ul>
-<li>打开新窗口: <code>ctrl+shift+n</code></li>
-<li>打开新页面: <code>ctrl+\</code></li>
-<li>关闭新页面: <code>ctrl+w</code></li>
-<li>切换页面: <code>ctrl+1</code>|<code>ctrl+2</code>|<code>ctrl+3</code>  如果没有则会打开</li>
-</ul>
-<p><strong>文件操作:</strong></p>
-<ul>
-<li>新建文件: <code>ctrl+n</code></li>
-<li>查找文件: <code>ctrl+p</code></li>
-</ul>
-<p><strong>代码操作:</strong></p>
-<ul>
-<li><p>括号匹配: <code>ctrl+shift+\</code>    快速跳到匹配的括号上</p>
-</li>
-<li><p>回到上一个光标位置: <code>ctrl+u</code></p>
-</li>
-<li><p>格式化代码: <code>shift+alt+f</code></p>
-</li>
-<li><p>查找: <code>ctrl+f</code></p>
-</li>
-<li><p>全局查找: <code>ctrl+shift+f</code></p>
-</li>
-<li><p>替换: <code>ctrl+h</code></p>
-</li>
-<li><p>选择多处: alt+鼠标点击</p>
-</li>
-<li><p>选择光标所在单词: <code>ctrl+d</code></p>
-</li>
-</ul>
-<p><strong>其他:</strong></p>
-<ul>
-<li>预览markdown: <code>ctrl+shift+v</code></li>
-<li>切换侧边栏: <code>ctrl+b</code></li>
-</ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>安装的不多，就下面几款：</p>
-<ul>
-<li>vscode-icons</li>
-<li>Path Intellisense</li>
-<li>Debugger for Chrome</li>
-<li>ESLint</li>
-<li>filesize</li>
-</ul>
+        <p>框架： jquery</p>
+<p>实现功能：div内的内容循环滚动，当鼠标移至div内，暂停滚动，移出继续滚动</p>
+<p>实现思路：设置定时器，每隔一小段时间内容向上移动1，重点是在滚动的内容div下面要加一个同样内容的div来实现连续性</p>
+<p>完整代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;script src=&quot;./src/jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		body &#123;</div><div class="line">			position: relative;</div><div class="line">		&#125;</div><div class="line">		.content &#123;</div><div class="line">			position: absolute;</div><div class="line">			padding: 10px;</div><div class="line">			box-sizing: border-box;</div><div class="line">			overflow: hidden;</div><div class="line">			width: 400px;</div><div class="line">			height: 100px;</div><div class="line">			border: 1px solid black;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;content&quot;&gt;</div><div class="line">		&lt;div class=&quot;scrollDiv&quot;&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div1</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div2</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div3</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div4</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div&gt;</div><div class="line">				div5</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div class=&quot;bottomDiv&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	(function () &#123;</div><div class="line">		setScroll();</div><div class="line">	&#125;)();</div><div class="line">	function setScroll() &#123;</div><div class="line">		var content = &quot;&quot;;</div><div class="line">		var speed = 50;</div><div class="line">		var bottomDiv = $(&quot;.bottomDiv&quot;);</div><div class="line">		var content = $(&quot;.content&quot;);</div><div class="line">		var scrollDiv = $(&quot;.scrollDiv&quot;);</div><div class="line">		bottomDiv.html(scrollDiv.html());</div><div class="line">		function scroll() &#123;</div><div class="line">			if (bottomDiv.outerHeight() - content.scrollTop() &lt;= 0) &#123;</div><div class="line">				content.scrollTop(content.scrollTop() - scrollDiv.outerHeight());</div><div class="line">			&#125; else &#123;</div><div class="line">				content.scrollTop(content.scrollTop() + 1);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		var rollInterval = setInterval(scroll, speed);</div><div class="line">		content.mouseover(function () &#123; clearInterval(rollInterval) &#125;);</div><div class="line">		content.mouseout(function () &#123; rollInterval = setInterval(scroll, speed); &#125;);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img src="http://oxy70dnj0.bkt.clouddn.com/xunhuangundongkuang1.gif" alt="效果图"></p>
 
       
 
@@ -204,17 +166,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -228,20 +179,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/18/es6小记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/07/markdown/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          es6小记
+          markdown
         
       </div>
     </a>
   
-  
-    <a href="/2017/09/07/markdown/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">markdown</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 

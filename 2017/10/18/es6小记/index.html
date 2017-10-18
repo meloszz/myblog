@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://meloszz.github.io/myblog">
-  <title>vscode | Hexo</title>
+  <title>es6小记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作为巨硬出品的编辑器，功能没话说，已经成为我的主力编辑器。 环境: windows 快捷键仅列出我常用的快捷键：  打开新窗口: ctrl+shift+n 打开新页面: ctrl+\ 关闭新页面: ctrl+w 切换页面: ctrl+1|ctrl+2|ctrl+3  如果没有则会打开  文件操作:  新建文件: ctrl+n 查找文件: ctrl+p  代码操作:  括号匹配: ctrl+shif">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="记录了一些我之前了解的或者用到的es6的新特性，不全面，仅仅是介绍。如果想要完整学习es6，建议翻看阮一峰的es6教程和mdn文档 class extendses6引入了class关键字，类的创建和继承更加的简洁和直观了 123456789101112131415161718192021222324252627//类的定义class Animal &amp;#123;	//构造器    construct">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vscode">
-<meta property="og:url" content="https://meloszz.github.io/myblog/2017/10/02/vscode杂七杂八/index.html">
+<meta property="og:title" content="es6小记">
+<meta property="og:url" content="https://meloszz.github.io/myblog/2017/10/18/es6小记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="作为巨硬出品的编辑器，功能没话说，已经成为我的主力编辑器。 环境: windows 快捷键仅列出我常用的快捷键：  打开新窗口: ctrl+shift+n 打开新页面: ctrl+\ 关闭新页面: ctrl+w 切换页面: ctrl+1|ctrl+2|ctrl+3  如果没有则会打开  文件操作:  新建文件: ctrl+n 查找文件: ctrl+p  代码操作:  括号匹配: ctrl+shif">
-<meta property="og:updated_time" content="2017-10-18T07:05:51.347Z">
+<meta property="og:description" content="记录了一些我之前了解的或者用到的es6的新特性，不全面，仅仅是介绍。如果想要完整学习es6，建议翻看阮一峰的es6教程和mdn文档 class extendses6引入了class关键字，类的创建和继承更加的简洁和直观了 123456789101112131415161718192021222324252627//类的定义class Animal &amp;#123;	//构造器    construct">
+<meta property="og:updated_time" content="2017-10-18T07:23:07.179Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vscode">
-<meta name="twitter:description" content="作为巨硬出品的编辑器，功能没话说，已经成为我的主力编辑器。 环境: windows 快捷键仅列出我常用的快捷键：  打开新窗口: ctrl+shift+n 打开新页面: ctrl+\ 关闭新页面: ctrl+w 切换页面: ctrl+1|ctrl+2|ctrl+3  如果没有则会打开  文件操作:  新建文件: ctrl+n 查找文件: ctrl+p  代码操作:  括号匹配: ctrl+shif">
+<meta name="twitter:title" content="es6小记">
+<meta name="twitter:description" content="记录了一些我之前了解的或者用到的es6的新特性，不全面，仅仅是介绍。如果想要完整学习es6，建议翻看阮一峰的es6教程和mdn文档 class extendses6引入了class关键字，类的创建和继承更加的简洁和直观了 123456789101112131415161718192021222324252627//类的定义class Animal &amp;#123;	//构造器    construct">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -130,72 +129,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vscode杂七杂八" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-es6小记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vscode
+      es6小记
     </h1>
   
 
         
-        <a href="/2017/10/02/vscode杂七杂八/" class="archive-article-date">
-  	<time datetime="2017-10-02T07:05:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-02</time>
+        <a href="/2017/10/18/es6小记/" class="archive-article-date">
+  	<time datetime="2017-10-18T03:01:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>作为巨硬出品的编辑器，功能没话说，已经成为我的主力编辑器。</p>
-<p>环境: windows</p>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>仅列出我常用的快捷键：</p>
-<ul>
-<li>打开新窗口: <code>ctrl+shift+n</code></li>
-<li>打开新页面: <code>ctrl+\</code></li>
-<li>关闭新页面: <code>ctrl+w</code></li>
-<li>切换页面: <code>ctrl+1</code>|<code>ctrl+2</code>|<code>ctrl+3</code>  如果没有则会打开</li>
-</ul>
-<p><strong>文件操作:</strong></p>
-<ul>
-<li>新建文件: <code>ctrl+n</code></li>
-<li>查找文件: <code>ctrl+p</code></li>
-</ul>
-<p><strong>代码操作:</strong></p>
-<ul>
-<li><p>括号匹配: <code>ctrl+shift+\</code>    快速跳到匹配的括号上</p>
+        <p>记录了一些我之前了解的或者用到的es6的新特性，不全面，仅仅是介绍。如果想要完整学习es6，建议翻看<a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">阮一峰的es6教程</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web" target="_blank" rel="external">mdn文档</a></p>
+<h2 id="class-extends"><a href="#class-extends" class="headerlink" title="class extends"></a>class extends</h2><p>es6引入了class关键字，类的创建和继承更加的简洁和直观了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//类的定义</div><div class="line">class Animal &#123;</div><div class="line">	//构造器</div><div class="line">    constructor(name) &#123;</div><div class="line">        this.name = name;</div><div class="line">    &#125;</div><div class="line">    //实例方法</div><div class="line">    sayName() &#123;</div><div class="line">        console.log(&apos;My name is &apos;+this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//类的继承</div><div class="line">class Programmer extends Animal &#123;</div><div class="line">    constructor(name) &#123;</div><div class="line">    	//直接调用父类构造器进行初始化</div><div class="line">        super(name);</div><div class="line">    &#125;</div><div class="line">    program() &#123;</div><div class="line">        console.log(&quot;I&apos;m coding...&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//测试我们的类</div><div class="line">var animal=new Animal(&apos;dummy&apos;),</div><div class="line">wayou=new Programmer(&apos;wayou&apos;);</div><div class="line">animal.sayName();//输出 ‘My name is dummy’</div><div class="line">wayou.sayName();//输出 ‘My name is wayou’</div><div class="line">wayou.program();//输出 ‘I&apos;m coding...’</div></pre></td></tr></table></figure>
+<h2 id="const-和-let"><a href="#const-和-let" class="headerlink" title="const 和 let"></a>const 和 let</h2><p>es6之前，是没有块级作用域这个概念的。一般都用var声明变量，而var有一个有名的特性叫变量提升。</p>
+<p>要点：</p>
+<ol>
+<li>不可重复定义</li>
+<li>const定义的变量不可修改，必须声明时赋值</li>
+<li>不存在变量提升</li>
+<li>暂时性死区</li>
+</ol>
+<h2 id="函数默认值"><a href="#函数默认值" class="headerlink" title="函数默认值"></a>函数默认值</h2><p>函数终于可以直接指定默认值了</p>
+<p><code>function(x, y = 5)</code></p>
+<p>但要注意：</p>
+<ol>
+<li>要设置默认值的参数要放在最后</li>
+<li>设置了默认值的参数不能在函数中用let和const再次声明</li>
+</ol>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>es6新增的箭头函数大大简化了声明函数的方式，基本上可以替代掉匿名函数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var array = [1, 2, 3];</div><div class="line">//传统写法</div><div class="line">array.forEach(function(v, i, a) &#123;</div><div class="line">    console.log(v);</div><div class="line">&#125;);</div><div class="line">//ES6</div><div class="line">array.forEach(v = &gt; console.log(v));</div></pre></td></tr></table></figure>
+<p>用法：</p>
+<ol>
+<li>如果只包含一个表达式，<code>{...}</code>和<code>return</code>都是可以省略的，如：<code>a=&gt;a*a</code></li>
+<li>如果包含多条语句，则不能省略</li>
+<li>单个参数可以省略<code>()</code>，多个则不行，需要用<code>()</code>括起来</li>
+</ol>
+<p>注意:</p>
+<ol>
+<li>箭头函数的this总是指向外层调用者</li>
+<li>返回对象时如果是单条语句需要多加一层<code>{}</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a =&gt; &#123;name: a&#125;              //错</div><div class="line">a =&gt; &#123;&#123;name: a&#125;&#125;            //对</div></pre></td></tr></table></figure>
 </li>
-<li><p>回到上一个光标位置: <code>ctrl+u</code></p>
-</li>
-<li><p>格式化代码: <code>shift+alt+f</code></p>
-</li>
-<li><p>查找: <code>ctrl+f</code></p>
-</li>
-<li><p>全局查找: <code>ctrl+shift+f</code></p>
-</li>
-<li><p>替换: <code>ctrl+h</code></p>
-</li>
-<li><p>选择多处: alt+鼠标点击</p>
-</li>
-<li><p>选择光标所在单词: <code>ctrl+d</code></p>
-</li>
-</ul>
-<p><strong>其他:</strong></p>
-<ul>
-<li>预览markdown: <code>ctrl+shift+v</code></li>
-<li>切换侧边栏: <code>ctrl+b</code></li>
-</ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>安装的不多，就下面几款：</p>
-<ul>
-<li>vscode-icons</li>
-<li>Path Intellisense</li>
-<li>Debugger for Chrome</li>
-<li>ESLint</li>
-<li>filesize</li>
-</ul>
+</ol>
+<h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><p>之前要拼接字符串通常是这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(&apos;#result&apos;).append(</div><div class="line">  &apos;There are &lt;b&gt;&apos; + basket.count + &apos;&lt;/b&gt; &apos; +</div><div class="line">  &apos;items in your basket, &apos; +</div><div class="line">  &apos;&lt;em&gt;&apos; + basket.onSale +</div><div class="line">  &apos;&lt;/em&gt; are on sale!&apos;</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>而有了模版字符串，只需要:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&apos;#result&apos;).append(`</div><div class="line">  There are &lt;b&gt;$&#123;basket.count&#125;&lt;/b&gt; items</div><div class="line">   in your basket, &lt;em&gt;$&#123;basket.onSale&#125;&lt;/em&gt;</div><div class="line">  are on sale!</div><div class="line">`);</div></pre></td></tr></table></figure></p>
+<h2 id="for…of"><a href="#for…of" class="headerlink" title="for…of"></a>for…of</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const arr = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</div><div class="line"></div><div class="line">for(let v of arr) &#123;</div><div class="line">  console.log(v); // red green blue</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>和for…in不同的是for…of每次循环的是值而不是序号</p>
+<h2 id="promsie"><a href="#promsie" class="headerlink" title="promsie"></a>promsie</h2><p>只要了解过nodejs的都知道callback hell，而es6内置的promise算是异步编程的一种解决方案，只是在es7出现了更优雅，更像同步代码的async/await</p>
+<p>promise和async回头再写一篇吧</p>
+<h2 id="主要参考"><a href="#主要参考" class="headerlink" title="主要参考:"></a>主要参考:</h2><p><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">http://es6.ruanyifeng.com/</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web</a></p>
 
       
 
@@ -204,17 +197,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -228,18 +210,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/18/es6小记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          es6小记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/07/markdown/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">markdown</div>
+    <a href="/2017/10/02/vscode杂七杂八/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vscode</div>
       <i class="icon-circle-right"></i>
     </a>
   
